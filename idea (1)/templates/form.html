@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+</head>
+<body>
+    <h1>Профиль</h1>
+    <form action="{{url_for('read_form')}}" method="post">
+        <label for="email" class="form-label">Почта:</label>
+        <input name="userEmail" type="email" class="form-control" id="email">
+
+
+    <label for="name" class="form-label">Аты:</label><br>
+    <input name="name" type="text" class="form-label" id="name">
+<br>
+    <label for="lastname" class="form-label">Тегі:</label>
+        <br>
+    <input name="lastname" class="form-control" id="lastname">
+        <input type="file" name="file">
+        <input type="submit" value="Еңгізу">
+
+
+    <button type="submit" class="btn btn-primary">Жіберу</button>
+</form>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+</body>
+</html>

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQ ZHOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script>
+    let navbar=document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick=()=>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let searchForm =document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');-
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let cartItem =document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick=()=>{
+    cartItem.classList.toggle('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, .3);
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar {
+    width: .8rem;
+}
+
+html ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body {
+    background: var(--bg);
+}
+
+section{
+    padding: 2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover {
+    letter-spacing: .2rem;
+}
+
+.header {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 12rem;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.header .navbar a:hover {
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icons div {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icons div:hover {
+    color: var(--main-color);
+}
+
+
+
+#menu-btn {
+    display: none;
+}
+
+
+
+.header .search-form {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+
+.header .search-form label:hover {
+    color: var(--main-color);
+}
+
+.header .cart-items-container {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 35rem;
+    background: #fff;
+    padding: 0 1.5rem;
+}
+
+
+.header .cart-items-container.active{
+    right: 0;
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header .cart-items-container .cart-item.fa-times{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color: var(--main-color);
+}
+
+.header .cart-items-container .cart-item img {
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+    font-size: 2rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.header .cart-items-container .btn {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+
+
+@media (max-width:768px){
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header .navbar.active {
+        right: 0;
+    }
+
+    .header .navbar a {
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: 5rem;
+        font-size: 2rem;
+    }
+
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+
+    .home{
+        background-position:left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size:4.5rem;
+    }
+
+    .home .content p{
+        font-size:1.5rem;
+    }
+
+}
+
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(fon.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 60rem;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap;
+}
+
+.about .row .image{
+    flex: 1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.menu .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border: var(--border);
+}
+.menu .box-container .box img{
+    height: 20rem;
+}
+.menu .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price{
+    color: #eee;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+.menu .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+.menu .box-container .box:hover{
+    background:#fff;
+}
+.menu .box-container .box:hover > *{
+    color: var(--black);
+}
+
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.products .box-container .box{
+    text-align: center;
+    border: var(--border);
+    padding: 2rem;
+}
+.products .box-container .box .icons a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border: var(--border);
+    color: #fff;
+    margin: .3rem;
+}
+.products .box-container .box .icons a:hover{
+    background: var(--main-color);
+}
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
+.products .box-container .box .image .img{
+    height: 25rem;
+}
+.products .box-container .box .content h3{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .stars{
+    padding: 1.5rem;
+}
+.products .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.products .box-container .box .content .price{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+.review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.review .box-container .box{
+    border: var(--border);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+.review .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #eee;
+    padding: 2rem 0;
+}
+.review .box-container .box .user{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review .box-container .box h3{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: #ccc;
+}
+.review .box-container .box .stars i{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+.contact .row{
+    display: flex;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.contact .row .map{
+    flex:1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.contact .row form h3{
+    text-transform: none;
+    font-size: 3.5rem;
+    color: #fff;
+}
+.contact .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--black);
+    border: var(--border);
+}
+.contact .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.contact .row form .inputBox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+}
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.blogs .box-container .box{
+    border: var(--border);
+}
+.blogs .box-container .box .image{
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+.blogs .box-container .box .image img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.blogs .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.blogs .box-container .box .content{
+    padding: 2rem;
+}
+.blogs .box-container .box .content .title{
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: #fff;
+}
+.blogs .box-container .box .content .title:hover{
+    color: var(--main-color);
+}
+.blogs .box-container .box .content span{
+    color: var(--main-color);
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+.blogs .box-container .box .content p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 1rem 0;
+}
+.footer{
+    background: var(--black);
+    text-align: center;
+}
+.footer .share{
+    padding: 1rem 0;
+}
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    border: var(--border);
+    margin: 3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.footer .links a{
+    padding: .7rem 2rem;
+    color: #fff;
+    border: var(--border);
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background: var(--main-color);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1.5rem;
+}
+
+.footer .credit span{
+    color: var(--main-color);
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+</style>
+<body>
+
+<!-- header ashyldy -->
+<header class="header">
+    <a href="#" class="logo">
+        <img src="logo.png.png" alt="Logo">
+    </a>
+
+    <nav class="navbar">
+        <a href="/">Басты бет</a>
+        <a href="/buytick">Билет сатып алу</a>
+        <a href="/contact">байланыс</a>
+        <a href="/form">Профиль</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+</header>
+
+<!-- header zhabyldy -->
+
+<!-- negizgi bet ashyldy -->
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Қош келдіңіз!</h3>
+        <p>Біздің билеттердің қолданылуы арқылы әуе, көлік және көлік өткізудің әр түріне байланысты шығын билеттерін қосымшаға тапсырыс беру мүмкіндігін ұсынамыз. Біз пайдаланушыларға толықтыруларды, бағаларды салыстыруды және ұсыныстарды қолдануға мүмкіндік беретін, саяхат маршруттары мен кезекті кездесетін, артықшылықтары және сапалы ұшуларды таңдауға мүмкіндік береміз. Біздің қосымшалар пайдаланушыларға оптимальды жолдарды таңдау, кестелер мен бағаларды салыстыру және сапаға саяхат жасауға көмектесеміз.</p>
+        <a href="/buytick" class="btn">Заказды жасау!</a>
+    </div>
+</section>
+<!-- negizgi bet zhabyldy-->
+<!-- about ashyldy -->
+<section class="about" id="about">
+    <h1 class="heading"> <span>Біз </span> туралы</h1>
+    <div class="row">
+        <div>
+            <img src="about.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Неге бізді таңдау керек?</h3>
+            <p>Билеттерін алдын ала сатып алыңыз.Жоспарланған сапардан бірнеше ай бұрын рейстерді брондаңыз, содан кейін сіз арзан бағамен рейстерді таба аласыз. Көбінесе төмен тарифтік билеттер қайтарылмайды және айырбасталмайды және оларды тез сатады. Сондықтан cапарынызға дейін неғұрлым көп уақыт болса, соғұрлым тиімді билетін брондау мүмкіндігі артады.</p>
+            <p>Ыстық Маусымда емес рейстерді іздеңіз
+                Көбісі жазда саяхаттағысы келеді, өйткені мектеп демалысы басталады, ауа-райы демалуға мүмкіндік береді. Сондықтан жазда және мереке күндері билеттер қымбатырақ. Саяхаттаудың ең жақсы уақытын табу үшін біздің сайттағы төмен бағалар күнтізбесін пайдаланыңыз. Қажетті бағыт пен күнді енгізіп, билеттерді салыстыру үшін іздеу түймесін басыңыз. Егер баға сізге сәйкес келмесе, онда біздің күнтізбені қараңыз-онда сіз ұсыныстарды тиімдірек таба аласыз. </p>
+            <a href="/buytick" class="btn">Таңдау!</a>
+        </div>
+    </div>
+</section>
+<!-- about zhabyldy -->
+
+<!-- menu ashyldy -->
+<section class="menu" id="menu">
+    <h1 class="heading">Горячие <span> туры </span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="menu1.png.png" alt="">
+            <h3>Актау</h3>
+            <div class="price">40000 тг<span>80000 тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="C:\Users\Admin\PycharmProjects\Project\templates\menu2.png.png" alt="">
+            <h3>Алма-ата</h3>
+            <div class="price">50000тг <span> 80000тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="menu3.png.png" alt="">
+            <h3>Бурабай</h3>
+            <div class="price">30000тг <span> 50000тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="menu4.png.png" alt="">
+            <h3>Катон-Қарағай</h3>
+            <div class="price">80000тг <span> 120000тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="menu5.png.png" alt="">
+            <h3>Иссык-Куль</h3>
+            <div class="price">60000тг<span> 90000тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="menu6.png.png" alt="">
+            <h3>Баянаул</h3>
+            <div class="price">20000тг <span> 30000тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="menu7.png" alt="">
+            <h3>Шымкент</h3>
+            <div class="price">30000тг <span> 50000тг</span></div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+
+        <div class="box">
+            <img src="menu8.png" alt="">
+            <h3>Шетелден турларды таңдау</h3>
+            <div class="price">150000тг бастап</div>
+            <a href="#" class="btn">Таңдау!</a>
+        </div>
+    </div>
+</section>
+<!-- menu zhabyldy -->
+
+<!-- products ashyldy -->
+ <section class="products" id="products">
+
+
+    </div>
+
+ </section>
+<!-- products zhabyldy -->
+
+<!-- review ashyldy -->
+<section class="review" id="review">
+
+    <h1 class="heading"> Біздің <span> клиенттердің шолулары!</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="quote.png" alt="" class="quote">
+            <p>Поездтер:
+                 "Көлікке сағаттардың аралығында саяхат өте ыңғайлы, артқы жерлерге болуға мүмкіндік береді. Купе немесе плацкартты таңдау мүмкіндігі комфорт жасайды және жолдағы пейзаждарды айқындауға мүмкіндік береді."
+                 "Мемлекет ішінде саяхаттарда қолданамын. Олар кесте бойынша дәл сынап, вагонда орны таңдау мүмкіндігі бар.".</p>
+            <img src="pic1.png" class="user" alt="">
+            <h3>Алия Женисовна</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="quote.png" alt="" class="quote">
+            <p>  Ұшақтар:
+                 "Ұшақ аяқтағы жерлерге тез және ықшам сапарлар құрау жолы — бұл жылдам және ыңғайлы жол. Бірақ билеттер күмән болуы мүмкін, және қосымша төлемдер жолдан шығаруы мүмкін пайда болуы мүмкін."
+                "Ұшақтар ғаламторлардың көптігінде ұсынылған рейстердің шаралары мен әрекеттері бар, бірақ қайталанатын орын аз болуы мүмкін.".</p>
+            <img src="pic2.png" class="user" alt="">
+            <h3>Айгуль Саматова</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="quote.png" alt="" class="quote">
+            <p> Автобустар:
+            "Автобустар көптің тиімді және экономиялы саяхаттары болып табылады. Олар жылдам емес, бірақ саяхатта комфорт және ықпалдылық ұсынады."
+        "Қысқа саяхаттар үшін автобустардан пайдаландым. Олар өтінішті жоғары болмаған кезде, пейзаждарды артықшылық жасау мен жерлі мешіттермен сөйлесу мүмкіндігін ұсынады..</p>
+            <img src="pic3.png" class="user" alt="">
+            <h3>Ахмадияр Мунайтпасов</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- review zhabyldy -->
+
+<!-- contact ashyldy -->
+<section class="contact" id="contact">
+
+    <h1 class="heading"><span>байла</span>ныс </h1>
+
+    <div class="row">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80029.2356436822!2d71.20480729726557!3d51.18381510000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245871991164b69%3A0xe4b2dd43a473b958!2sAkjol-%20inc!5e0!3m2!1sru!2skz!4v1703427411171!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <form action="">
+            <h3>Енгізу</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="Name">
+            </div>
+
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="Email">
+            </div>
+
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" placeholder="Number">
+            </div>
+            <input type="submit" value="Жіберу!" class="btn">
+        </form>
+    </div>
+
+</section>
+<!-- contact zhabyldy -->
+
+
+<!-- blog ashyldy -->
+<section class="blogs" id="blogs">
+    <h1 class="heading"> Біздің <span> блогымыз</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="blog1.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Қуанышты хабар!</a>
+                <span>20 Наурыз, 2023</span>
+                <p>Біздің ашылғанымызға арнайы әрбір саяхат 20% cкидка.</p>
+                <a href="#" class="btn">Таңдау!</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="blog2.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Жаңа жер,жаңа көрініс!</a>
+                <span>1 желтоқсан, 2023</span>
+                <p>Бодрумға бірге саяхаттайық,20 желтоқсанға билеттерді сатып алуға үлгерініз!</p>
+                <a href="#" class="btn">Таңдау!</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="blog3.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Жаңа жыл,құтты болсын!</a>
+                <span>30 желтоқсан, 2022</span>
+                <p>Жаңа жыл құтты болсын!Біз AQ Zhol сізді жаңа қуаныштармен қарсаламыз.</p>
+                <a href="#" class="btn">Таңдау!</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog zhabyldy -->
+
+<!-- footer ashyldy  -->
+<section class="footer">
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-whatsapp"></a>
+    </div>
+    <div class="links">
+        <a href="/home">Басты бет</a>
+        <a href="/buytick">Билет сатып алу</a>
+        <a href="/contact">Байланыс</a>
+        <a href="/form">Профиль</a>
+    </div>
+
+    <div class="credit">2023| AQ ZHOL </div>
+
+</section>
+<!-- footer zhabyldy  -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

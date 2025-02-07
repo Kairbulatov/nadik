@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Ticket</title>
+</head>
+<body>
+    <h1>Buy Ticket</h1>
+    <form method="POST">
+        {{ form.csrf_token }}
+        <p>{{ form.departure.label }} {{ form.departure }}</p>
+        <p>{{ form.destination.label }} {{ form.destination }}</p>
+        <p>{{ form.departure_date.label }} {{ form.departure_date }}</p>
+        <p>{{ form.price.label }} {{ form.price }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+</body>
+</html>

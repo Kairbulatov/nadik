@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Профиль клиента</title>
+</head>
+<body>
+    <h1>Профиль клиента</h1>
+    <div>
+        <h2>Информация о клиенте:</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <p>{{ form.name.label }} {{ form.name(size=20) }}</p>
+            <p>{{ form.l_name.label }} {{ form.l_name(size=20) }}</p>
+            <p>{{ form.phone.label }} {{ form.phone(size=20) }}</p>
+            <p>{{ form.email.label }} {{ form.email(size=20) }}</p>
+            <p>{{ form.birth_date.label }} {{ form.birth_date(size=20) }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+<section class="footer">
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-whatsapp"></a>
+    </div>
+    <div class="links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Menu</a>
+        <a href="#">Products</a>
+        <a href="/about">Contatcs</a>
+        <a href="/form">Profile</a>
+    </div>
+
+    <div class="credit"> | all rights reserved</div>
+
+</section>
+<!-- footer zhabyldy  -->
+
+<script src="script.js"></script>
+</body>
+</html>
