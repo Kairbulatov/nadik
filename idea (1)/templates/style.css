@@ -282,6 +282,78 @@ section{
 
 }
 
+/* Секция с социальными сетями */
+/* Секция с соцсетями */
+/* Секция YouTube */
+.youtube-video {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--bg);
+}
+
+/* Заголовок */
+.youtube-video .heading {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/* Контейнер для видео */
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* Уменьшаем размер превью */
+    max-width: 600px; /* Ограничиваем максимальную ширину */
+    margin: auto;
+    cursor: pointer;
+}
+
+.video-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Кнопка Play */
+
+
+.video-container:hover .play-button {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* Описание под видео */
+.video-description {
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .social-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-box {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .social-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
 
 .home{
     min-height: 100vh;
