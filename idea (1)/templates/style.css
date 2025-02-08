@@ -298,32 +298,45 @@ section{
     margin-bottom: 30px;
 }
 
-/* Контейнер для видео */
+/* Контейнер для всех видео */
 .video-container {
-    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50%; /* Уменьшаем размер превью */
-    max-width: 600px; /* Ограничиваем максимальную ширину */
-    margin: auto;
-    cursor: pointer;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.video-container img {
+/* Блок каждого видео */
+.video-box {
+    position: relative;
+    width: 30%;
+    max-width: 350px;
+}
+
+/* Превью видео */
+.video-box img {
     width: 100%;
-    height: auto;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Кнопка Play */
-
-
-.video-container:hover .play-button {
-    background: rgba(0, 0, 0, 0.9);
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 25px;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
+.video-box:hover .play-button {
+    background: rgba(0, 0, 0, 0.9);
+}
 
 /* Описание под видео */
 .video-description {
@@ -331,6 +344,7 @@ section{
     color: #ccc;
     margin-top: 10px;
 }
+
 
 
 /* Адаптация для мобильных */
