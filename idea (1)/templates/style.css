@@ -306,7 +306,7 @@ section{
     align-items: center;
     width: 50%; /* Уменьшаем размер превью */
     max-width: 600px; /* Ограничиваем максимальную ширину */
-    margin: auto;
+    margin: 10px;
     cursor: pointer;
 }
 
