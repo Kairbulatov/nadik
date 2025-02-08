@@ -71,32 +71,53 @@ window.onscroll = () =>{
 
 <!-- negizgi bet ashyldy -->
 <section class="home" id="home">
+    <video autoplay muted loop id="bg-video">
+        <source src="fon2.mp4" type="video/mp4">
+        Сіздің браузеріңіз бейнені қолдамайды.
+    </video>
 
     <div class="content">
         <h3>Қош келдіңіз!</h3>
-        <p>Біздің билеттердің қолданылуы арқылы әуе, көлік және көлік өткізудің әр түріне байланысты шығын билеттерін қосымшаға тапсырыс беру мүмкіндігін ұсынамыз. Біз пайдаланушыларға толықтыруларды, бағаларды салыстыруды және ұсыныстарды қолдануға мүмкіндік беретін, саяхат маршруттары мен кезекті кездесетін, артықшылықтары және сапалы ұшуларды таңдауға мүмкіндік береміз. Біздің қосымшалар пайдаланушыларға оптимальды жолдарды таңдау, кестелер мен бағаларды салыстыру және сапаға саяхат жасауға көмектесеміз.</p>
-        <a href="catalog.html" class="btn">Заказды жасау!</a>
+        <p>
+            Біздің платформа арқылы сіз әуе, көлік және басқа да тасымалдау қызметтеріне арналған билеттерді оңай брондай аласыз. 
+            Біз сізге ең тиімді бағыттарды, баға салыстыруды және сапалы қызметтерді таңдауға көмектесеміз. 
+            Уақыт пен қаржыңызды үнемдеп, сапардан максималды ләззат алыңыз!
+        </p>
+        <a href="catalog.html" class="btn">Брондау!</a>
     </div>
 </section>
+
 <!-- negizgi bet zhabyldy-->
 <!-- about ashyldy -->
 <section class="about" id="about">
-    <h1 class="heading"> <span>Про </span> нас</h1>
+    <h1 class="heading"> <span>Біз </span> жайлы</h1>
     <div class="row">
-        <div>
-            <img src="about.jpg" alt="">
+        <div class="image">
+            <img src="pronas.png" alt="Біз жайлы" class="circle">
         </div>
 
         <div class="content">
-            <h3>Кратко про нас</h3>
-            <p>ведущая компания в сфере сельскохозяйственной техники и решений для аграрного сектора. Мы предлагаем современные и надежные механизмы, помогающие фермерам повышать эффективность работы, оптимизировать затраты и достигать максимальных урожаев</p>
-            <p>С момента основания мы активно развиваемся, внедряя передовые технологии и сотрудничая с мировыми производителями сельхозоборудования. Наш ассортимент включает тракторы, комбайны, посевные комплексы, а также комплектующие и запчасти.
-
-                Мы стремимся не только продавать технику, но и предлагать комплексные решения: техническое обслуживание, консультации по выбору оборудования и поддержку на всех этапах работы. Благодаря профессионализму нашей команды и индивидуальному подходу к каждому клиенту, Agro Business Astana заслужила доверие аграриев по всей стране. </p>
-            <a href="/buytick" class="btn">Выбрать нас!</a>
+            <h3>Қысқаша біз туралы</h3>
+            <p>
+                Біз – ауыл шаруашылығы техникасы мен аграрлық секторға арналған шешімдер саласындағы жетекші компаниямыз.
+                Біз фермерлерге жұмыс тиімділігін арттыруға, шығындарды оңтайландыруға және максималды өнім алуға көмектесетін
+                заманауи және сенімді механизмдерді ұсынамыз.
+            </p>
+            <p>
+                Құрылған сәттен бастап біз белсенді дамып, озық технологияларды енгізіп, ауыл шаруашылығы техникасының әлемдік өндірушілерімен 
+                ынтымақтасып келеміз. Біздің ассортиментімізге тракторлар, комбайндар, егін себу кешендері, сондай-ақ 
+                қосалқы бөлшектер мен керек-жарақтар кіреді.
+            </p>
+            <p>
+                Біз тек техника сатуды ғана емес, кешенді шешімдерді де ұсынамыз: техникалық қызмет көрсету, жабдықты таңдауға 
+                кеңес беру және жұмыстың барлық кезеңдерінде қолдау көрсету. Кәсібилігіміз бен әр клиентке жеке көзқарасымыздың арқасында 
+                Agro Business Astana еліміздегі аграршылардың сеніміне ие болды.
+            </p>
+            <a href="/buytick" class="btn">Бізді таңдау!</a>
         </div>
     </div>
 </section>
+
 <!-- about zhabyldy -->
 
 <!-- menu ashyldy -->
@@ -268,32 +289,69 @@ window.onscroll = () =>{
     <div class="video-container">
         <!-- Видео 1 -->
         <div class="video-box">
-            <a href="https://youtu.be/SUJ9PGpcQbA" target="_blank">
-                <img src="https://img.youtube.com/vi/SUJ9PGpcQbA/maxresdefault.jpg" alt="Видео 1">
-                <div class="play-button">▶</div>
-            </a>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/SUJ9PGpcQbA?rel=0&modestbranding=1&controls=1&showinfo=0" 
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
             <p class="video-description">Обзор №1</p>
         </div>
 
         <!-- Видео 2 -->
         <div class="video-box">
-            <a href="https://youtu.be/SUJ9PGpcQbA" target="_blank">
-                <img src="https://img.youtube.com/vi/SUJ9PGpcQbA/maxresdefault.jpg" alt="Видео 2">
-                <div class="play-button">▶</div>
-            </a>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/zrf48U_ZELM?rel=0&modestbranding=1&controls=1&showinfo=0"
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
             <p class="video-description">Обзор №2</p>
         </div>
 
         <!-- Видео 3 -->
         <div class="video-box">
-            <a href="https://youtu.be/SUJ9PGpcQbA" target="_blank">
-                <img src="https://img.youtube.com/vi/SUJ9PGpcQbA/maxresdefault.jpg" alt="Видео 3">
-                <div class="play-button">▶</div>
-            </a>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/uDg2L1anGNQ?rel=0&modestbranding=1&controls=1&showinfo=0" 
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
             <p class="video-description">Обзор №3</p>
         </div>
     </div>
 </section>
+
+<style>
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .video-box {
+        width: 30%; /* Делаем 3 видео в ряд */
+        min-width: 300px; /* Минимальный размер */
+        text-align: center;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Соотношение 16:9 */
+        height: 0;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    /* Адаптация для мобильных */
+    @media (max-width: 768px) {
+        .video-box {
+            width: 100%; /* На мобильных 1 видео в ряд */
+        }
+    }
+</style>
 
 
 

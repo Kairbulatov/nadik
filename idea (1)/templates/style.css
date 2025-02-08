@@ -369,59 +369,86 @@ section{
     }
 }
 
-.home{
+.home {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(fon.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    padding: 2rem;
 }
 
-.home .content{
-    max-width: 60rem;
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
-.home .content h3{
-    font-size: 6rem;
+.home .content {
+    position: relative;
+    max-width: 70rem; /* Было 60rem, увеличено */
+    background: rgba(0, 0, 0, 0.6); /* Чуть более тёмный фон */
+    padding: 3rem; /* Было 2rem, увеличено */
+    border-radius: 12px; /* Чуть скруглённые углы */
+}
+
+.home .content h3 {
+    font-size: 6.5rem; /* Чуть увеличен заголовок */
     text-transform: uppercase;
     color: #fff;
 }
 
-.home .content p{
-    font-size: 2rem;
+.home .content p {
+    font-size: 2.2rem; /* Чуть больше текста */
     font-weight: lighter;
-    line-height: 1.8;
-    padding: 1rem 0;
+    line-height: 2; /* Увеличен интервал между строками */
+    padding: 1.5rem 0; /* Чуть больше отступ */
     color: #eee;
 }
 
-.about .row{
+
+.about .row {
     display: flex;
     align-items: center;
+    justify-content: center; /* Центрируем содержимое */
     background: var(--black);
     flex-wrap: wrap;
+    padding: 3rem 5%;
 }
 
-.about .row .image{
-    flex: 1 1 45rem;
+.about .row .image {
+    flex: 1 1 35rem; /* Уменьшаем размер контейнера с изображением */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.about .row .image img{
-    width: 100%;
+.about .row .image img {
+    width: 100%; /* Уменьшаем само изображение */
+    max-width: 500px; /* Ограничиваем максимальный размер */
+    border-radius: 20px; /* Закругляем углы */
+    object-fit: cover;
 }
 
-.about .row .content{
-    flex: 1 1 45rem;
+.about .row .content {
+    flex: 1 1 50rem;
     padding: 2rem;
+    text-align: left;
 }
 
-.about .row .content h3{
+.about .row .content h3 {
     font-size: 3rem;
     color: #fff;
 }
 
-.about .row .content p{
+.about .row .content p {
     font-size: 1.6rem;
     color: #ccc;
     padding: 1rem 0;
