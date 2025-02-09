@@ -43,11 +43,11 @@ body {
     background: var(--bg);
 }
 
-section{
+section {
     padding: 2rem 7%;
 }
 
-.heading{
+.heading {
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -55,11 +55,10 @@ section{
     font-size: 4rem;
 }
 
-.heading span{
-    color:var(--main-color);
+.heading span {
+    color: var(--main-color);
     text-transform: uppercase;
 }
-
 
 .btn {
     margin-top: 1rem;
@@ -116,134 +115,31 @@ section{
     color: var(--main-color);
 }
 
-
-
 #menu-btn {
     display: none;
 }
-
-
-
-.header .search-form {
-    position: absolute;
-    top: 115%;
-    right: 7%;
-    background: #fff;
-    width: 50rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-}
-
-
-.header .search-form.active{
-    transform: scaleY(1);
-}
-
-
-.header .search-form input {
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 1rem;
-    text-transform: none;
-}
-
-.header .search-form label {
-    cursor: pointer;
-    font-size: 2.2rem;
-    margin-right: 1.5rem;
-    color: var(--black);
-}
-
-.header .search-form label:hover {
-    color: var(--main-color);
-}
-
-.header .cart-items-container {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    height: calc(100vh - 9.5rem);
-    width: 35rem;
-    background: #fff;
-    padding: 0 1.5rem;
-}
-
-
-.header .cart-items-container.active{
-    right: 0;
-}
-
-.header .cart-items-container .cart-item{
-    position: relative;
-    margin: 2rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.header .cart-items-container .cart-item.fa-times{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--black);
-}
-
-.header .cart-items-container .cart-item .fa-times:hover{
-    color: var(--main-color);
-}
-
-.header .cart-items-container .cart-item img {
-    height: 7rem;
-}
-
-.header .cart-items-container .cart-item .content h3 {
-    font-size: 2rem;
-    color: var(--black);
-    padding-bottom: .5rem;
-}
-
-.header .cart-items-container .cart-item .content .price {
-    font-size: 1.5rem;
-    color: var(--main-color);
-}
-
-.header .cart-items-container .btn {
-    width: 100%;
-    text-align: center;
-}
-
-
-
 
 @media (max-width: 991px) {
     html {
         font-size: 55%;
     }
-
     .header {
         padding: 1.5rem 2rem;
     }
-    section{
+    section {
         padding: 2rem;
     }
 }
 
-
-@media (max-width:768px){
+@media (max-width: 768px) {
     #menu-btn {
         display: inline-block;
     }
 
     .header .navbar {
         position: absolute;
-        top: 100%; right: -100%;
+        top: 100%; 
+        right: -100%;
         background: #fff;
         width: 30rem;
         height: calc(100vh - 9.5rem);
@@ -260,30 +156,8 @@ section{
         padding: 5rem;
         font-size: 2rem;
     }
-
-    .header .search-form{
-        width: 90%;
-        right: 2rem;
-    }
-
-    .home{
-        background-position:left;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .home .content h3{
-        font-size:4.5rem;
-    }
-
-    .home .content p{
-        font-size:1.5rem;
-    }
-
 }
 
-/* Секция с социальными сетями */
-/* Секция с соцсетями */
 /* Секция YouTube */
 .youtube-video {
     text-align: center;
@@ -291,60 +165,38 @@ section{
     background-color: var(--bg);
 }
 
-/* Заголовок */
 .youtube-video .heading {
     font-size: 4rem;
     color: #fff;
     margin-bottom: 30px;
 }
 
-/* Контейнер для всех видео */
 .video-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Центрируем видео */
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Даем возможность адаптации */
 }
 
-/* Блок каждого видео */
 .video-box {
-    position: relative;
-    width: 30%;
-    max-width: 350px;
+    width: 30%; /* Каждое видео занимает 30% ширины контейнера */
+    max-width: 560px; /* Максимальная ширина */
+    text-align: center;
 }
 
-/* Превью видео */
-.video-box img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+.video-box iframe {
+    width: 100%; /* Видео растягивается под контейнер */
+    height: 315px;
 }
 
-/* Кнопка Play */
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px 25px;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.video-box:hover .play-button {
-    background: rgba(0, 0, 0, 0.9);
-}
-
-/* Описание под видео */
 .video-description {
     font-size: 1.6rem;
     color: #ccc;
     margin-top: 10px;
 }
 
+
+<<<<<<< HEAD
 
 
 /* Адаптация для мобильных */
@@ -417,76 +269,110 @@ section{
 .about .row {
     display: flex;
     align-items: center;
-    justify-content: center; /* Центрируем содержимое */
+    justify-content: flex-start;
     background: var(--black);
     flex-wrap: wrap;
     padding: 3rem 5%;
 }
 
 .about .row .image {
-    flex: 1 1 35rem; /* Уменьшаем размер контейнера с изображением */
+    flex: 1 1 32rem; /* Чуть увеличили, но не как раньше */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: -20px; /* Чуть меньше сместили фото */
 }
 
 .about .row .image img {
-    width: 100%; /* Уменьшаем само изображение */
-    max-width: 500px; /* Ограничиваем максимальный размер */
-    border-radius: 20px; /* Закругляем углы */
+    width: 100%;
+    max-width: 480px; /* Чуть больше, но меньше, чем в предыдущем варианте */
+    border-radius: 20px;
     object-fit: cover;
+    transform: translateX(-10px); /* Чуть меньше смещения */
 }
 
 .about .row .content {
-    flex: 1 1 50rem;
-    padding: 2rem;
+    flex: 1 1 60rem; /* Уменьшили блок с текстом */
+    padding: 2.5rem;
     text-align: left;
 }
 
 .about .row .content h3 {
-    font-size: 3rem;
+    font-size: 3.2rem; /* Чуть уменьшили заголовок */
     color: #fff;
 }
 
 .about .row .content p {
-    font-size: 1.6rem;
+    font-size: 1.7rem; /* Чуть меньше текста */
     color: #ccc;
     padding: 1rem 0;
-    line-height: 1.8;
+    line-height: 1.9; /* Чуть меньше интервала */
+    max-width: 80rem; /* Ограничиваем максимальную ширину */
 }
 
-.menu .box-container{
+
+.menu .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд */
+    gap: 2rem; /* Чуть увеличенный отступ между карточками */
+    justify-content: center;
+    align-items: center;
 }
-.menu .box-container .box{
-    padding: 5rem;
+
+.menu .box-container .box {
+    padding: 3rem; /* Увеличили отступы внутри карточки */
     text-align: center;
     border: var(--border);
+    border-radius: 15px; /* Закругляем углы */
+    transition: transform 0.3s ease, background 0.3s ease;
 }
-.menu .box-container .box img{
-    height: 20rem;
+
+.menu .box-container .box img {
+    height: 24rem; /* Сделали картинки чуть больше */
+    width: 100%; /* Чтобы они растягивались равномерно */
+    object-fit: cover;
+    border-radius: 10px;
 }
-.menu .box-container .box h3{
+
+.menu .box-container .box h3 {
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Сделали текст больше */
     padding: 1rem 0;
 }
-.menu .box-container .box .price{
+
+.menu .box-container .box .price {
     color: #eee;
-    font-size: 2.5rem;
-    padding: .5rem 0;
+    font-size: 3rem; /* Цена теперь крупнее */
+    padding: 1rem 0;
 }
-.menu .box-container .box .price span{
-    font-size: 1.5rem;
+
+.menu .box-container .box .price span {
+    font-size: 1.8rem;
     text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.6);
 }
-.menu .box-container .box:hover{
-    background:#fff;
+
+/* Анимация при наведении */
+.menu .box-container .box:hover {
+    background: #fff;
+    transform: scale(1.05); /* Легкое увеличение */
 }
-.menu .box-container .box:hover > *{
+
+.menu .box-container .box:hover > * {
     color: var(--black);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .menu .box-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu .box-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 карточка в ряд на мобильных */
+    }
 }
 
 .products .box-container{
@@ -610,50 +496,146 @@ section{
     text-transform: none;
     background: none;
 }
-.blogs .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
+.gallery {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--bg);
+    position: relative;
 }
-.blogs .box-container .box{
-    border: var(--border);
+
+.gallery .heading {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 30px;
 }
-.blogs .box-container .box .image{
-    height: 25rem;
-    overflow: hidden;
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Скрываем стандартный скроллбар */
     width: 100%;
+    padding: 10px 0;
 }
-.blogs .box-container .box .image img{
+
+/* Скрываем скроллбар в Chrome */
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-wrapper a {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px; /* Закругляем углы */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-wrapper a img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 15px; /* Закругляем углы у картинки */
+    transition: transform 0.3s ease;
+}
+
+.gallery-wrapper a:hover img {
+    transform: scale(1.05);
+}
+
+/* Кнопки прокрутки */
+.prev-btn, .next-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 3rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.gallery-wrapper a {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px; /* Закругляем углы */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-wrapper a img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Закругляем углы у картинки */
+    transition: transform 0.3s ease;
 }
-.blogs .box-container .box:hover .image img{
-    transform: scale(1.2);
+
+.gallery-wrapper a:hover img {
+    transform: scale(1.05);
 }
-.blogs .box-container .box .content{
-    padding: 2rem;
+
+/* Кнопки прокрутки */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 3rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
 }
-.blogs .box-container .box .content .title{
-    font-size: 2.5rem;
-    line-height: 1.5;
-    color: #fff;
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
-.blogs .box-container .box .content .title:hover{
-    color: var(--main-color);
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .gallery-container {
+        width: 95%;
+    }
+
+    .gallery-wrapper a {
+        width: 180px;
+        height: 180px;
+    }
 }
-.blogs .box-container .box .content span{
-    color: var(--main-color);
-    display: block;
-    padding-top: 1rem;
-    font-size: 2rem;
-}
-.blogs .box-container .box .content p{
-    font-size: 1.6rem;
-    line-height: 1.8;
-    color: #ccc;
-    padding: 1rem 0;
-}
+
+
 .footer{
     background: var(--black);
     text-align: center;
@@ -706,6 +688,8 @@ section{
     color: var(--main-color);
 }
 
+=======
+>>>>>>> 09d0922a9aa6412924d74d8b2e14f156e5d18bc9
 @media (max-width: 450px) {
     html {
         font-size: 50%;
