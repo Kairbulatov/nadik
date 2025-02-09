@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQ ZHOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="stylesss.css">
+
+</head>
+<script>
+    let navbar=document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick=()=>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let searchForm =document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');-
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let cartItem =document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick=()=>{
+    cartItem.classList.toggle('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+</script>
+
+<body>
+
+<!-- header ashyldy -->
+ 
+<header class="header">
+    <div class="logo">AGROBUSINESS ASTANA</div>
+    <nav class="navbar">
+        <a href="#">Все товары</a>
+        <a href="#">Садовые машины</a>
+        <a href="#">Reviews</a>
+        <a href="#">Premium Area</a>
+    </nav>
+</header>
+<main class="catalog">
+    <aside class="sidebar">
+        <h3>Искать по</h3>
+        <ul>
+            <li><a href="#">Все товары</a></li>
+            <li><a href="#">Запчасти</a></li>
+            <li><a href="#">Садовые машины</a></li>
+            <li><a href="#">Сельхоз техника</a></li>
+        </ul>
+
+        <h3>Фильтр</h3>
+        <label for="price">Цена</label>
+        <input type="range" id="price" min="20" max="130" value="75">
+        <span id="price-value">75,00₸</span>
+        <div class="catalog"></div>
+        <h3>Наша продукция</h3> 
+        <div class="video-container">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/oScPl8DtO7w?si=I1jwh0Gg2eW6UIwo" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    
+    </aside>
+    
+    <section class="products">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Введите название товара...">
+            <button onclick="searchProducts()">Поиск</button>
+        </div>
+        <script>
+            function searchProducts() {
+            let input = document.getElementById("search-bar").value.toLowerCase();
+            let products = document.querySelectorAll(".product");
+        
+            products.forEach(product => {
+                let title = product.querySelector("h3").innerText.toLowerCase();
+                if (title.includes(input)) {
+                    product.style.display = "block"; // Показываем, если есть совпадение
+                } else {
+                    product.style.display = "none"; // Скрываем, если нет совпадений
+                }
+            });
+        }
+        </script>
+            <h2>Все товары</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <span class="tag">Best Seller</span>
+                    <img src="fon.jpg" alt="Опрыскиватель навесной">
+                    <h3>ОПРЫСКИВАТЕЛЬ НАВЕСНОЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <span class="tag">Best Seller</span>
+                    <img src="fon.jpg" alt="Косилка роторная Z-178/HYD/4">
+                    <h3>КОСИЛКА РОТОРНАЯ Z-178/HYD/4</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <span class="tag">Best Seller</span>
+                    <img src="fon.jpg" alt="Косилка роторная навесная">
+                    <h3>КОСИЛКА РОТОРНАЯ НАВЕСНАЯ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+            </div>
+        </section>
+        
+</main>
+
+<script>
+    document.getElementById("price").addEventListener("input", function() {
+        document.getElementById("price-value").textContent = this.value + ",00₸";
+    });
+</script>
+
+    <!-- Ваше содержимое здесь -->
+</section>
+<!-- main content end -->
+
+<!-- contact section -->
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Байла</span>ныс</h1>
+    <div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form action="">
+            <h3>Енгізу</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="Name">
+            </div> 
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" placeholder="Number">
+            </div>
+            <input type="submit" value="Жіберу!" class="btn">
+        </form>
+    </div>
+</section>
+<!-- contact section end -->
+
+<!-- footer -->
+<section class="footer">
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-whatsapp"></a>
+    </div>
+    <div class="links">
+        <a href="/home">Басты бет</a>
+        <a href="/buytick">Билет сатып алу</a>
+        <a href="/contact">Байланыс</a>
+        <a href="/form">Профиль</a>
+    
+    
+    </div>
+    <div class="credit">2023 | AQ ZHOL</div>
+</section>
+<!-- footer end -->
+
+<script src="script.js"></script>
+</body>
+</html>
