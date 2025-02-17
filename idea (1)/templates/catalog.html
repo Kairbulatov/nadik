@@ -3,185 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories</title>
+    <title>AQ ZHOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    <link rel="stylesheet" href="stylesss.css">
 
-        :root {
-            --main-color: #d3ad7f;
-            --black: #13131a;
-            --bg: #010103;
-            --border: 0.08rem solid rgba(255, 255, 255, .3);
-        }
-
-        * {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: .2s linear;
-        }
-
-        body {
-            background: var(--bg);
-            color: white;
-        }
-
-        .header {
-            background: var(--bg);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.5rem 4%;
-            border-bottom: var(--border);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .header .logo img {
-            height: 5rem;
-        }
-
-        .header .navbar a {
-            margin: 0 0.5rem;
-            font-size: 1rem;
-            color: #fff;
-        }
-
-        .header .navbar a:hover {
-            color: var(--main-color);
-            border-bottom: .05rem solid var(--main-color);
-        }
-
-        .header .icons div {
-            color: #fff;
-            cursor: pointer;
-            font-size: 1.5rem;
-            margin-left: 0.8rem;
-        }
-
-        .header .icons div:hover {
-            color: var(--main-color);
-        }
-
-        .catalog {
-            padding: 6rem 4% 1rem;
-            text-align: center;
-        }
-
-        .catalog h1 {
-            font-size: 1.8rem;
-            color: var(--main-color);
-            margin-bottom: 1rem;
-        }
-
-        .category-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .category-buttons button {
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            background: var(--main-color);
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .category-buttons button:hover {
-            background: #b38b6d;
-        }
-
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-            gap: 0.8rem;
-        }
-
-        .product {
-            background: #222;
-            padding: 1rem;
-            border-radius: 6px;
-            text-align: center;
-            display: none; /* Скрываем по умолчанию */
-        }
-
-        .product img {
-            width: 100%;
-            max-width: 140px;
-            height: 100px;
-            border-radius: 6px;
-            object-fit: cover;
-        }
-
-        .product h3 {
-            font-size: 1.3rem;
-            margin: 0.5rem 0;
-            color: #fff;
-        }
-
-        .product .price {
-            font-size: 1.2rem;
-            color: var(--main-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .product .btn {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            font-size: 1rem;
-            background: var(--main-color);
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .product .btn:hover {
-            background: #b38b6d;
-        }
-
-        /* 3 товара в ряд на телефонах */
-        @media (max-width: 600px) {
-            .products-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* 3 товара в ряд на планшетах */
-        @media (max-width: 900px) {
-            .products-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* 4 товара в ряд на больших экранах */
-        @media (min-width: 901px) {
-            .products-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-    </style>
 </head>
+<script>
+    let navbar=document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick=()=>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let searchForm =document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');-
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let cartItem =document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick=()=>{
+    cartItem.classList.toggle('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+</script>
+
 <body>
 
+<!-- header ashyldy -->
+ 
 <header class="header">
     <a href="#" class="logo">
-        <img src="logo.png" alt="Logo">
+        <img src="LOGOABA.png" height="50px" alt="Logo">
     </a>
 
     <nav class="navbar">
         <a href="index.html">Басты бет</a>
-        <a href="/buytick">Билет сатып алу</a>
-        <a href="/contact">Байланыс</a>
+        <a href="catalogg.html">Каталог</a>
+        <a href="/contact">байланыс</a>
         <a href="/form">Профиль</a>
     </nav>
 
@@ -190,56 +63,293 @@
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
 </header>
 
-<!-- Каталог товаров -->
-<section class="catalog">
-    <h1>Каталог товаров</h1>
+<main class="catalog">
+    <aside class="sidebar">
+        <h3>Искать по</h3>
+        <ul>
+            <li><a href="#" onclick="filterByCategory('все')">Все товары</a></li>
+            <li><a href="#" onclick="filterByCategory('запчасти')">Запчасти</a></li>
+            <li><a href="#" onclick="filterByCategory('садовые машины')">Садовые машины</a></li>
+            <li><a href="#" onclick="filterByCategory('сельхоз техника')">Сельхоз техника</a></li>
+        </ul>
+        
 
-    <!-- Кнопки для фильтрации по категориям -->
-    <div class="category-buttons">
-        <button onclick="filterProducts('all')">Все</button>
-        <button onclick="filterProducts('domestic')">Казахстан</button>
-        <button onclick="filterProducts('foreign')">Зарубежные</button>
-        <button onclick="filterProducts('nature')">Природные</button>
-    </div>
-
-    <div class="products-container">
+        <h3>Фильтр</h3>
+        <label for="price">Цена</label>
+        <input type="range" id="price" min="20" max="130" value="75">
+        <span id="price-value">75,00₸</span>
+        <div class="catalog"></div>
+        <h3>Наша продукция</h3> 
+        <div class="video-container">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/oScPl8DtO7w?si=I1jwh0Gg2eW6UIwo" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    
+    </aside>
+    
+    <section class="products">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Введите название товара...">
+            <button onclick="searchProducts()">Поиск</button>
+        </div>
         <script>
-            let products = [
-                { name: "Актау", price: "40000 тг", img: "menu1.png", category: "domestic" },
-                { name: "Алма-ата", price: "50000 тг", img: "menu2.png", category: "domestic" },
-                { name: "Бурабай", price: "30000 тг", img: "menu3.png", category: "nature" },
-                { name: "Катон-Қарағай", price: "80000 тг", img: "menu4.png", category: "nature" },
-                { name: "Шымкент", price: "35000 тг", img: "menu5.png", category: "domestic" },
-                { name: "Каспий", price: "60000 тг", img: "menu6.png", category: "nature" },
-                { name: "Париж", price: "250000 тг", img: "menu7.png", category: "foreign" },
-                { name: "Дубай", price: "300000 тг", img: "menu8.png", category: "foreign" }
-            ];
+            function searchProducts() {
+    let input = document.getElementById("search-bar").value.toLowerCase();
+    let products = document.querySelectorAll(".product");
+    let found = false;
 
-            let container = document.querySelector(".products-container");
+    products.forEach(product => {
+        let title = product.querySelector("h3").innerText.toLowerCase();
+        if (title.includes(input)) {
+            product.style.display = "block";
+            found = true;
+        } else {
+            product.style.display = "none";
+        }
+    });
 
-            products.forEach(product => {
-                container.innerHTML += `
-                    <div class="product ${product.category}">
-                        <img src="${product.img}" alt="${product.name}">
-                        <h3>${product.name}</h3>
-                        <div class="price">${product.price}</div>
-                        <a href="#" class="btn">Таңдау!</a>
-                    </div>
-                `;
-            });
+    if (!found) {
+        document.querySelector(".product-grid").innerHTML = "<p>Товар не найден</p>";
+    }
+}
+document.getElementById("price").addEventListener("input", function () {
+    const selectedPrice = parseInt(this.value);
+    document.getElementById("price-value").textContent = `${selectedPrice},00₸`;
+    filterProductsByPrice(selectedPrice);
+});
 
-            function filterProducts(category) {
-                document.querySelectorAll('.product').forEach(product => {
-                    product.style.display = (category === "all" || product.classList.contains(category)) ? "block" : "none";
-                });
+function filterProductsByPrice(maxPrice) {
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+        const priceText = product.dataset.price;
+        if (priceText) {
+            const productPrice = parseInt(priceText);
+            if (productPrice <= maxPrice) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
             }
+        }
+    });
+}
 
-            filterProducts("all"); // Показать все товары при загрузке
+function filterByCategory(category) {
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+        const productCategory = product.getAttribute("data-category");
+        
+        if (category === 'все' || productCategory === category) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
         </script>
+            <h2>Все товары</h2>
+            <div class="product-grid">
+                <div class="product" data-price="75" data-category="садовые машины">
+                    <span class="tag">Best Seller</span>
+                    <img src="fon.jpg" alt="Опрыскиватель навесной">
+                    <h3>ОПРЫСКИВАТЕЛЬ НАВЕСНОЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+            
+                <div class="product" data-price="120"data-category="запчасти">
+                    <span class="tag">Best Seller</span>
+                    <img src="fon.jpg" alt="Косилка роторная">
+                    <h3>КОСИЛКА РОТОРНАЯ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+            
+                <div class="product" data-price="100" data-category="сельхоз техника">
+                    <span class="tag">Best Seller</span>
+                    <img src="fon.jpg" alt="Косилка роторная">
+                    <h3>КОСИЛКА РОТОРНАЯ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product" data-price="90" data-category="садовые машины">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product" data-price="70"data-category="садовые машины">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product" data-price="40" data-category="сельхоз техника">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product" data-price="10" data-category="запчасти">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+                <div class="product" data-price="60" data-category="садовые техника">
+                    <img src="fon.jpg" alt="Разбрасыватель мин. удобрений">
+                    <h3>РАЗБРАСЫВАТЕЛЬ МИН. УДОБРЕНИЙ</h3>
+                    <button class="btn">Подробнее</button>
+                </div>
+            </div>
+            
+            <div id="payment-modal" class="modal">
+                <div class="modal-content">
+                  <span class="close-btn">&times;</span>
+                  <h2>Выберите способ оплаты</h2>
+                  <p id="product-name"></p>
+                  <p>Цена товара: <span id="product-price">0₸</span></p>
+              
+                  <label for="payment-type"><p>Способ оплаты:</p></label>
+                  <select id="payment-type">
+                    <option value="full">Полная оплата</option>
+                    <option value="3">Кредит на 3 месяца</option>
+                    <option value="6">Кредит на 6 месяцев</option>
+                    <option value="9">Кредит на 9 месяцев</option>
+                    <option value="12">Кредит на 12 месяцев</option>
+                  </select>
+              
+                  <p>Итоговая сумма: <span id="final-price">0₸</span></p>
+              
+                  <button id="confirm-payment" class="btn">Оплатить</button>
+                </div>
+              </div>
+              
+              <script>
+                const buttons = document.querySelectorAll(".btn");
+                const modal = document.getElementById("payment-modal");
+                const closeModal = document.querySelector(".close-btn");
+                const productNameElem = document.getElementById("product-name");
+                const productPriceElem = document.getElementById("product-price");
+                const finalPriceElem = document.getElementById("final-price");
+                const paymentTypeSelect = document.getElementById("payment-type");
+                const confirmPaymentButton = document.getElementById("confirm-payment");
+              
+                let selectedProductName = '';
+                let selectedProductPrice = 0;
+              
+                // Открытие модального окна
+                buttons.forEach(button => {
+                  button.addEventListener("click", (event) => {
+                    const product = event.target.closest(".product");
+                    selectedProductName = product.querySelector("h3").textContent;
+                    selectedProductPrice = parseFloat(product.getAttribute("data-price"));
+              
+                    productNameElem.textContent = `Товар: ${selectedProductName}`;
+                    productPriceElem.textContent = `${selectedProductPrice}₸`;
+                    finalPriceElem.textContent = `${selectedProductPrice}₸`;
+              
+                    modal.style.display = "block";
+                  });
+                });
+              
+                // Обновление цены при выборе способа оплаты
+                paymentTypeSelect.addEventListener("change", () => {
+                  let finalPrice = selectedProductPrice;
+                  const paymentType = paymentTypeSelect.value;
+              
+                  if (paymentType !== "full") {
+                    const months = parseInt(paymentType);
+                    finalPrice = (selectedProductPrice / months).toFixed(2);
+                  }
+              
+                  finalPriceElem.textContent = `${finalPrice}₸ в месяц`;
+                });
+              
+                // Подтверждение оплаты
+                confirmPaymentButton.addEventListener("click", () => {
+                  alert(`Оплата успешно выполнена для товара: ${selectedProductName}. Итоговая сумма: ${finalPriceElem.textContent}`);
+                  modal.style.display = "none";
+                });
+              
+                // Закрытие модального окна
+                closeModal.addEventListener("click", () => {
+                  modal.style.display = "none";
+                });
+              
+                window.addEventListener("click", (event) => {
+                  if (event.target === modal) {
+                    modal.style.display = "none";
+                  }
+                });
+              </script>
+              
+            
+        </section>
+        
+</main>
+
+<script>
+    document.getElementById("price").addEventListener("input", function() {
+        document.getElementById("price-value").textContent = this.value + ",00₸";
+    });
+</script>
+
+    <!-- Ваше содержимое здесь -->
+</section>
+<!-- main content end -->
+
+<!-- contact section -->
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Байла</span>ныс</h1>
+    <div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form action="">
+            <h3>Енгізу</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="Name">
+            </div> 
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="City">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" placeholder="Number">
+            </div>
+            <input type="submit" value="Жіберу!" class="btn">
+        </form>
     </div>
 </section>
+<!-- contact section end -->
 
+<!-- footer -->
+<section class="footer">
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-whatsapp"></a>
+    </div>
+    <div class="links">
+        <a href="index.html">Басты бет</a>
+        <a href="catalogg.html">Каталог</a>
+        <a href="/contact">байланыс</a>
+        <a href="/form">Профиль</a>
+    
+    
+    </div>
+    <div class="credit">2025 | AGRO BUSINESS ASTANA</div>
+</section>
+<!-- footer end -->
+
+<script src="script.js"></script>
 </body>
 </html>

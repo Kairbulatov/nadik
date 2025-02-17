@@ -39,6 +39,27 @@ window.onscroll = () =>{
     searchForm.classList.remove('active');
     cartItem.classList.remove('active');
 }
+
+
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const galleryWrapper = document.querySelector('.gallery-wrapper');
+
+// Для кнопки "предыдущий"
+prevBtn.addEventListener('click', () => {
+    galleryWrapper.scrollBy({
+        left: -250,  // Уменьшаем на 250px (ширина одного элемента)
+        behavior: 'smooth',
+    });
+});
+
+// Для кнопки "следующий"
+nextBtn.addEventListener('click', () => {
+    galleryWrapper.scrollBy({
+        left: 250,  // Увеличиваем на 250px (ширина одного элемента)
+        behavior: 'smooth',
+    });
+});
 </script>
 <body>
 
@@ -131,12 +152,12 @@ window.onscroll = () =>{
         <button class="prev-btn">‹</button> <!-- Кнопка влево -->
 
         <div class="gallery-wrapper">
-            <a href="page1.html"><img src="fon.jpg" alt="Товар 1"></a>
-            <a href="page2.html"><img src="fon.jpg" alt="Товар 2"></a>
-            <a href="page3.html"><img src="fon.jpg" alt="Товар 3"></a>
-            <a href="page4.html"><img src="fon.jpg" alt="Товар 4"></a>
-            <a href="page5.html"><img src="fon.jpg" alt="Товар 5"></a>
-            <a href="page6.html"><img src="fon.jpg" alt="Товар 6"></a>
+            <a href="page1.html"><img src="опрыскиватель-removebg-preview.png" alt="Товар 1"></a>
+            <a href="page2.html"><img src="Косилка-роторная-навесная-removebg-preview.png" alt="Товар 2"></a>
+            <a href="page3.html"><img src="КосилкароторнаяZ-178-HYD-4-removebg-preview.png" alt="Товар 3"></a>
+            <a href="page4.html"><img src="Почвофреза-навесная-removebg-preview.png" alt="Товар 4"></a>
+            <a href="page5.html"><img src="Разбрасыватель-мин-удобрений-removebg-preview.png" alt="Товар 5"></a>
+            <a href="page6.html"><img src="Садовая-косилка-removebg-preview.png" alt="Товар 6"></a>
             <a href="page1.html"><img src="fon.jpg" alt="Товар 1"></a>
             <a href="page2.html"><img src="fon.jpg" alt="Товар 2"></a>
             <a href="page3.html"><img src="fon.jpg" alt="Товар 3"></a>
@@ -173,43 +194,43 @@ window.onscroll = () =>{
     <div class="box-container">
 
         <div class="box">
-            <img src="menu1.png.png" alt="">
-            <h3>Трахтор</h3>
+            <img src="опрыскиватель-removebg-preview.png" alt="">
+            <h3>Навесной опрыскиватель</h3>
             <div class="price">40000 тг<span>80000 тг</span></div>
             <a href="#" class="btn">Заказать!</a>
         </div>
 
         <div class="box">
-            <img src="menu2.png.png" alt="">
-            <h3>Трахтор</h3>
+            <img src="КосилкароторнаяZ-178-HYD-4-removebg-preview.png" alt="">
+            <h3>Косилка роторная</h3>
             <div class="price">50000тг <span> 80000тг</span></div>
             <a href="#" class="btn">Заказать!</a>
         </div>
 
         <div class="box">
-            <img src="menu3.png.png" alt="">
-            <h3>Трахтор</h3>
+            <img src="Косилка-роторная-навесная-removebg-preview.png" alt="">
+            <h3>Косилка роторная навесная</h3>
             <div class="price">30000тг <span> 50000тг</span></div>
             <a href="#" class="btn">Заказать!</a>
         </div>
 
         <div class="box">
-            <img src="menu4.png.png" alt="">
-            <h3>Трахтор</h3>
+            <img src="Почвофреза-навесная-removebg-preview.png" alt="">
+            <h3>Почвофреза навесная</h3>
             <div class="price">80000тг <span> 120000тг</span></div>
             <a href="#" class="btn">Заказать!</a>
         </div>
 
         <div class="box">
-            <img src="menu5.png.png" alt="">
-            <h3>Трахтор</h3>
+            <img src="Разбрасыватель-мин-удобрений-removebg-preview.png" alt="">
+            <h3>Разбрасыватель мин. удобрений</h3>
             <div class="price">60000тг<span> 90000тг</span></div>
             <a href="#" class="btn">Заказать!</a>
         </div>
 
         <div class="box">
-            <img src="menu6.png.png" alt="">
-            <h3>Трахтор</h3>
+            <img src="Опрыскиватель-садовый-двухвентиляторный-removebg-preview.png" alt="">
+            <h3>Опрыскиватель садовый двухвентиляторный</h3>
             <div class="price">20000тг <span> 30000тг</span></div>
             <a href="#" class="btn">ТаңЗаказатьдау!</a>
         </div>
@@ -265,7 +286,7 @@ window.onscroll = () =>{
             <iframe width="560" height="315" src="https://www.youtube.com/embed/zrf48U_ZELM?si=10gxgidWa2WuaomV" 
                 title="YouTube video player" frameborder="0" allowfullscreen>
             </iframe>
-            <p class="video-description">Мозги Аяна</p>
+            <p class="video-description"></p>
         </div>
 
         <!-- Видео 2 -->
@@ -273,7 +294,7 @@ window.onscroll = () =>{
             <iframe width="560" height="315" src="https://www.youtube.com/embed/uDg2L1anGNQ?si=uVF4tzIqeB5KE91-" 
                 title="YouTube video player" frameborder="0" allowfullscreen>
             </iframe>
-            <p class="video-description">Аян чорт</p>
+            <p class="video-description">Наши видеообзоры</p>
         </div>
 
         <!-- Видео 3 -->
@@ -281,7 +302,7 @@ window.onscroll = () =>{
             <iframe width="560" height="315" src="https://www.youtube.com/embed/2CXaO5FbV0o?si=gzzVy3Y7hlCUXuDw" 
                 title="YouTube video player" frameborder="0" allowfullscreen>
             </iframe>
-            <p class="video-description">Аян лох</p>
+            <p class="video-description"></p>
         </div>
     </div>
 </section>
@@ -318,7 +339,7 @@ window.onscroll = () =>{
     }
 
     .search-form button {
-        background-color: #4CAF50;
+        background-color: red;
         border: none;
         color: white;
         font-size: 18px;
@@ -328,7 +349,7 @@ window.onscroll = () =>{
     }
 
     .search-form button:hover {
-        background-color: #45a049;
+        background-color:red;
     }
 
     /* Показывать форму поиска при активации */
@@ -371,6 +392,10 @@ window.onscroll = () =>{
             width: 100%; /* На мобильных 1 видео в ряд */
         }
     }
+
+
+    
+
 </style>
 
 
@@ -387,13 +412,13 @@ window.onscroll = () =>{
         <a href="#" class="fab fa-whatsapp"></a>
     </div>
     <div class="links">
-        <a href="/home">Басты бет</a>
-        <a href="/buytick">Билет сатып алу</a>
-        <a href="/contact">Байланыс</a>
-        <a href="/form">Әнәсс</a>
+        <a href="/home">На главную</a>
+        <a href="/buytick">О нас</a>
+        <a href="/contact">Связь</a>
+        <a href="/form">Каталог</a>
     </div>
 
-    <div class="credit">2023| AQ ZHOL </div>
+    <div class="credit">2025| AGRO BUSINESS ASTANA </div>
 
 </section>
 <!-- footer zhabyldy  -->
