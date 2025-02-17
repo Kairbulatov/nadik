@@ -63,9 +63,10 @@ window.onscroll = () =>{
     </div>
 
     <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here...">
-        <label for="search-box" class="fas fa-search"></label>
+        <input type="text" placeholder="Поиск...">
+        <button><i class="fas fa-search"></i></button>
     </div>
+
 </header>
 
 <!-- header zhabyldy -->
@@ -289,6 +290,53 @@ window.onscroll = () =>{
 
 
 <style>
+
+        /* Стили для поисковой строки */
+    .search-form {
+        position:absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 10px;
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 250px;
+    }
+
+    .search-form input {
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+
+    .search-form button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .search-form button:hover {
+        background-color: #45a049;
+    }
+
+    /* Показывать форму поиска при активации */
+    .search-form.active {
+        display: flex;
+    }
+
+
     .video-container {
         display: flex;
         flex-wrap: wrap;
